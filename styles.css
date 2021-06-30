@@ -1,13 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 *, *::before, *::after {
   box-sizing: border-box;
-  font-family: Gotham Rounded, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: normal;
 }
 
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(to right, rgb(255, 17, 0), rgb(255, 238, 0));
+  background: linear-gradient(90deg, #C33764, #1D2671 );
 }
 
 .calculator-grid {
@@ -22,13 +23,25 @@ body {
 .calculator-grid > button {
   cursor: pointer;
   font-size: 2rem;
-  border: 1px solid rgb(0, 0, 0);
   outline: none;
-  background-color: rgba(0, 255, 255, 0.75);
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  margin: 1px;
+  transition: 0.3s;
+  color: white;
 }
 
 .calculator-grid > button:hover {
-  background-color: rgba(255, 255, 255, .9);
+  background: rgba( 255, 255, 255, 0.50 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .span-two {
@@ -37,7 +50,6 @@ body {
 
 .output {
   grid-column: 1 / -1;
-  background-color: rgba(69, 243, 69, 0.75);
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
@@ -45,14 +57,65 @@ body {
   padding: 10px;
   word-wrap: break-word;
   word-break: break-all;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  margin-bottom: 0.3rem;
 }
 
 .output .previous-operand {
-  color: rgba(253, 47, 47, 0.808);
+  color: white;
+  font-weight: bold;
   font-size: 1.5rem;
 }
 
 .output .current-operand {
-  color: rgb(255, 0, 0);
   font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.equal-btn {
+  background: rgba( 221, 221, 0, 0.7 ) !important;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.equal-btn:hover {
+  background: rgba( 221, 221, 0, 0.9 ) !important;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.bookmark {
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  position: absolute;
+  top: 10%;
+  padding-right: 3rem;
+  padding-left: 1.5rem;
+  z-index: 1;
+}
+
+.bookmark h3 , .bookmark a{
+  color: white;
+  font-weight: bold;
+}
+@media screen and (max-width:767px) {
+  .bookmark{
+    display: none;
+  }
 }
